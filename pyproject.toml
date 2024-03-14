@@ -3,8 +3,6 @@ name = "customer-support-chatbot"
 version = "0.1.0"
 description = ""
 authors = ["Muntasir-Mahmud <m.siyam529@gmail.com>"]
-readme = "README.md"
-packages = [{include = "customer_support_chatbot"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
