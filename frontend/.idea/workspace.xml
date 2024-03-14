@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fcd6b8e-8f8a-42d5-9229-12f63dba6f8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/chains/chatbot_query_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/chains/chatbot_query_chain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/models/chatbot_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/models/chatbot_query.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +58,8 @@
       <workItem from="1710323776929" duration="3420000" />
       <workItem from="1710375942367" duration="13000" />
       <workItem from="1710377850168" duration="3000" />
+      <workItem from="1710439332789" duration="35000" />
+      <workItem from="1710442692190" duration="8000" />
     </task>
     <servers />
   </component>
