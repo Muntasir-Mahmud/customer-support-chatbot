@@ -33,26 +33,22 @@ if prompt := st.chat_input("What do you want to know?"):
     data = {"text": prompt}
 
     with st.spinner("Searching for an answer..."):
-        output_text = """I am a customer support agent of Stellar! this is 
-        test message."""
-        # response = requests.post(CHATBOT_URL, json=data)
-        #
-        # if response.status_code == 200:
-        #     # output_text = response.json()["output"]
-        #     explanation = response.json()["intermediate_steps"]
-        #
-        # else:
-        #     output_text = """An error occurred while processing your message.
-        #     Please try again or rephrase your message."""
-        # explanation = output_text
+
+        response = requests.post(CHATBOT_URL, json=data)
+
+        if response.status_code == 200:
+            output_text = response.json()["output"]
+
+        else:
+            output_text = """An error occurred while processing your message.
+            Please try again or rephrase your message."""
+        explanation = output_text
 
     st.chat_message("assistant").markdown(output_text)
-    # st.status("How was this generated?", state="complete").info(explanation)
 
     st.session_state.messages.append(
         {
             "role": "assistant",
             "output": output_text,
-            # "explanation": explanation,
         }
     )
