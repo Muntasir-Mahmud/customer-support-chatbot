@@ -4,7 +4,7 @@ import requests
 import streamlit as st
 
 CHATBOT_URL = os.getenv(
-    "CHATBOT_URL", "http://localhost:8000/hospital-rag-agent"
+    "CHATBOT_URL", "https://customer-support-chatbot-backend-dev-hhng.2.sg-1.fl0.io/chatbot"
 )
 
 
