@@ -2,10 +2,14 @@ import os
 
 import requests
 import streamlit as st
+from dotenv import load_dotenv
+from pip._internal.network import session
 
-CHATBOT_URL = os.getenv(
-    "CHATBOT_URL", "https://customer-support-chatbot-backend-dev-hhng.2.sg-1.fl0.io/chatbot"
-)
+from utils import generate_session_id
+
+load_dotenv()
+
+CHATBOT_URL = os.getenv("CHATBOT_URL")
 
 
 st.title("Customer Support Chatbot")
@@ -28,13 +32,17 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("What do you want to know?"):
     st.chat_message("user").markdown(prompt)
 
+    if 'session_id' not in st.session_state:
+        st.session_state['session_id'] = generate_session_id()
+
     st.session_state.messages.append({"role": "user", "output": prompt})
 
-    data = {"text": prompt}
+    data = {"query": prompt}
+    headers = {"session-id": st.session_state["session_id"]}
 
-    with st.spinner("Searching for an answer..."):
+    with st.spinner("Waiting for an answer..."):
 
-        response = requests.post(CHATBOT_URL, json=data)
+        response = requests.post(CHATBOT_URL, json=data, headers=headers)
 
         if response.status_code == 200:
             output_text = response.json()["output"]
