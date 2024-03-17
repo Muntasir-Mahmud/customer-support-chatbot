@@ -3,7 +3,6 @@ import os
 import requests
 import streamlit as st
 from dotenv import load_dotenv
-from pip._internal.network import session
 
 from utils import generate_session_id
 
@@ -37,12 +36,11 @@ if prompt := st.chat_input("What do you want to know?"):
 
     st.session_state.messages.append({"role": "user", "output": prompt})
 
-    data = {"query": prompt}
-    headers = {"session-id": st.session_state["session_id"]}
+    data = {"text": prompt, "session_id": st.session_state["session_id"]}
 
     with st.spinner("Waiting for an answer..."):
 
-        response = requests.post(CHATBOT_URL, json=data, headers=headers)
+        response = requests.post(CHATBOT_URL, json=data)
 
         if response.status_code == 200:
             output_text = response.json()["output"]
