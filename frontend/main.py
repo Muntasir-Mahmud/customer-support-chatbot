@@ -3,12 +3,16 @@ import os
 import requests
 import streamlit as st
 from dotenv import load_dotenv
-
 from utils import generate_session_id
 
 load_dotenv()
 
 CHATBOT_URL = os.getenv("CHATBOT_URL")
+
+st.set_page_config(
+    page_title="chatbot",
+    page_icon="🤖",
+)
 
 
 st.title("Customer Support Chatbot")
