@@ -8,13 +8,13 @@ load_dotenv()
 
 TRAINING_DATA_URL = os.getenv("TRAINING_DATA_URL")
 
-st.set_page_config(page_title="training data", page_icon="📈")
+st.set_page_config(page_title="knowledge base", page_icon="📈")
 
-st.markdown("# Training data")
+st.markdown("# Knowledge Base")
 response = requests.get(TRAINING_DATA_URL)
 st.markdown(response.json()["data"])
 
-st.title("Training Data Input")
+st.title("Knowledge Base Input")
 
 question = st.text_input("Enter the question:")
 answer = st.text_area("Enter the answer:")
