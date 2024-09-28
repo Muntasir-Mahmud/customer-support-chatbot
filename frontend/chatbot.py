@@ -17,7 +17,7 @@ st.set_page_config(
 
 st.title("Customer Support Chatbot")
 st.info(
-    """I am a customer support agent of Stellar!"""
+    """I am a customer support agent of X Teachnologies!"""
 )
 
 if "messages" not in st.session_state:
